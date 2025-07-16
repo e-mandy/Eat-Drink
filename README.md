@@ -23,5 +23,18 @@ L'objectif de ce projet est de développer une plateforme de gestion des stands 
 
 ## ⚙️ Récupération du projet
 
-    Clonage du projet
+1. Clonage du projet:
     git clone https://github.com/mouwaficbdr/longest-word-game.git
+
+2. Installation des dépendances:
+    composer install
+
+3. Copier le .env.example dans un fichier .env (à créer d'avance) et supprimer le fichier .env.example
+
+4. Générer la clé de l'application :
+    php artisan key:generate
+
+5. Lancer ensuite le projet avec la commande (N'oubliez pas de lancer le server xampp au cas où vous tourner sur xampp):
+    php artisan serve
+
+6. Commencer à coder 😉
