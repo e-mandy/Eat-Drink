@@ -21,6 +21,7 @@ L'objectif de ce projet est de développer une plateforme de gestion des stands 
     - 👨🏿‍💼 MESSOHOUNSOUNOU Caleb (Chef projet)
 
 
-## ⚙️ Récu^pération du projet
+## ⚙️ Récupération du projet
 
+    Clonage du projet
     git clone https://github.com/mouwaficbdr/longest-word-game.git
