@@ -1,0 +1,1122 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eat&Drink - Événement Culinaire Premium</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header Navigation Bar -->
+        <nav class="top-nav">
+            <a href="#" class="nav-item active" onclick="showPage('welcome')">
+                <span>🏠</span>
+                <span>Accueil</span>
+            </a>
+            <a href="#" class="nav-item" onclick="showPage('stands')">
+                <span>🍔</span>
+                <span>Nos Stands</span>
+            </a>
+            <a href="#" class="nav-item" onclick="showPage('profile')">
+                <span>👤</span>
+                <span>Profil</span>
+            </a>
+            <button class="menu-btn" id="menu-btn-stands" onclick="openStandsSidebar()" style="margin-left:auto; background:none; border:none; height:100%; cursor:pointer; padding:0 1.2rem; display:flex; align-items:center;">
+                <span style="font-size:1.7rem;">☰</span>
+            </button>
+        </nav>
+        <!-- End Header Navigation Bar -->
+        <!-- Welcome Page -->
+        <div class="page" id="welcome-page">
+            <div class="hero-section">
+                <img src="C:\xampp\htdocs\calrbtriedtoohard\public\Featured Food Large Meal Composition Featuring Lots Of Backgrounds _ JPG Free Download - Pikbest.jpeg" alt="Hero" class="hero-bg">
+                <div class="hero-overlay"></div>
+                <div class="hero-content">
+                    <h1 class="hero-title">Bienvenue sur Eat&Drink</h1>
+                    <p class="hero-subtitle">Un événement incontournable pour les passionnés de cuisine, avec une variété de stands, de plats gourmets et de spécialités locales.</p>
+                    <button class="btn btn-primary hero-btn" onclick="showPage('register')">S'inscrire</button>
+                </div>
+            </div>
+            <div class="about-section glass-card">
+                <h2>À propos de Eat&Drink</h2>
+                <p>Eat&Drink est un événement culinaire unique qui met en avant une grande diversité de stands, de plats gourmets et de spécialités locales. Rejoignez-nous pour une journée de découvertes, de saveurs et de convivialité.</p>
+            </div>
+            <div class="exhibitor-section">
+                <h2>Stands à l'honneur</h2>
+                <div class="exhibitor-cards">
+                    <div class="exhibitor-card">
+                        <img src="/public/stand1.jpg" alt="Burger Bliss">
+                        <div class="exhibitor-info">
+                            <h3>Burger Bliss</h3>
+                            <p>Burgers gourmets délicieux</p>
+                        </div>
+                    </div>
+                    <div class="exhibitor-card">
+                        <img src="/public/stand2.jpg" alt="Sweet Sensation">
+                        <div class="exhibitor-info">
+                            <h3>Sweet Sensation</h3>
+                            <p>Glaces artisanales & desserts</p>
+                        </div>
+                    </div>
+                    <div class="exhibitor-card">
+                        <img src="/public/stand3.jpg" alt="Spice Route">
+                        <div class="exhibitor-info">
+                            <h3>Spice Route</h3>
+                            <p>Épices exotiques et saveurs du monde</p>
+                        </div>
+                    </div>
+                    <div class="exhibitor-card">
+                        <img src="/public/stand4.jpg" alt="Vegan Vibes">
+                        <div class="exhibitor-info">
+                            <h3>Vegan Vibes</h3>
+                            <p>Délices culinaires végétaliens</p>
+                        </div>
+                    </div>
+                    <div class="exhibitor-card">
+                        <img src="/public/stand5.jpg" alt="Seafood Shack">
+                        <div class="exhibitor-info">
+                            <h3>Seafood Shack</h3>
+                            <p>Spécialités de fruits de mer frais</p>
+                        </div>
+                    </div>
+                    <div class="exhibitor-card">
+                        <img src="/public/stand6.jpg" alt="Pastry Palace">
+                        <div class="exhibitor-info">
+                            <h3>Pastry Palace</h3>
+                            <p>Pâtisseries françaises et viennoiseries</p>
+                        </div>
+                    </div>
+                    <div class="exhibitor-card">
+                        <img src="/public/stand7.jpg" alt="Pizza Maestro">
+                        <div class="exhibitor-info">
+                            <h3>Pizza Maestro</h3>
+                            <p>Pizzas artisanales au feu de bois</p>
+                        </div>
+                    </div>
+                    <div class="exhibitor-card">
+                        <img src="/public/stand8.jpg" alt="Choco Délice">
+                        <div class="exhibitor-info">
+                            <h3>Choco Délice</h3>
+                            <p>Chocolats et douceurs maison</p>
+                        </div>
+                    </div>
+                    <div class="exhibitor-card">
+                        <img src="/public/stand9.jpg" alt="Saveurs d'Orient">
+                        <div class="exhibitor-info">
+                            <h3>Saveurs d'Orient</h3>
+                            <p>Spécialités orientales authentiques</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Bottom Navigation Bar -->
+        <nav class="bottom-nav">
+            <a href="#" class="nav-item active" onclick="showPage('welcome')">
+                <span>🏠</span>
+                <span>Home</span>
+            </a>
+            <a href="#" class="nav-item" onclick="showPage('stands')">
+                <span>🍔</span>
+                <span>Our Exhibitors</span>
+            </a>
+            <a href="#" class="nav-item" onclick="showPage('profile')">
+                <span>👤</span>
+                <span>Profile</span>
+            </a>
+        </nav>
+        <!-- End Welcome Page -->
+
+        <!-- Login Page -->
+        <div class="page hidden" id="login-page">
+            <div class="auth-container">
+                <button class="back-btn" onclick="showPage('welcome')">← Retour</button>
+                
+                <div class="glass-card auth-card">
+                    <h2 class="auth-title gradient-text">Connexion</h2>
+                    <p class="auth-subtitle">Accédez à votre espace entrepreneur</p>
+                    
+                    <form id="login-form" class="auth-form">
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" class="futuristic-input" placeholder="votre@email.com" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="password">Mot de passe</label>
+                            <input type="password" id="password" name="password" class="futuristic-input" placeholder="••••••••" required>
+                        </div>
+                        
+                        <div class="error-message hidden" id="login-error">
+                            Email ou mot de passe incorrect
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary btn-full">
+                            Se connecter
+                        </button>
+                        
+                        <div class="auth-links">
+                            <a href="#" class="forgot-link">Mot de passe oublié ?</a>
+                            <p>Pas encore de compte ? <a href="#" onclick="showPage('register')">S'inscrire</a></p>
+                        </div>
+                    </form>
+                    
+                    <div class="demo-credentials">
+                        <p><strong>Démo :</strong></p>
+                        <p>Email: admin@eatdrink.com</p>
+                        <p>Mot de passe: admin123</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Register Page -->
+        <div class="page hidden" id="register-page">
+            <div class="auth-container">
+                <button class="back-btn" onclick="showPage('welcome')">← Retour</button>
+                
+                <div class="glass-card auth-card">
+                    <h2 class="auth-title gradient-text">Inscription Entrepreneur</h2>
+                    <p class="auth-subtitle">Demandez votre stand pour l'événement</p>
+                    
+                    <form id="register-form" class="auth-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">Prénom</label>
+                                <input type="text" id="firstName" name="firstName" class="futuristic-input" placeholder="Prénom" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Nom</label>
+                                <input type="text" id="lastName" name="lastName" class="futuristic-input" placeholder="Nom" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="regEmail">Email</label>
+                            <input type="email" id="regEmail" name="email" class="futuristic-input" placeholder="votre@email.com" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="company">Nom de l'entreprise</label>
+                            <input type="text" id="company" name="company" class="futuristic-input" placeholder="Votre entreprise" required>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="regPassword">Mot de passe</label>
+                                <input type="password" id="regPassword" name="password" class="futuristic-input" placeholder="••••••••" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="confirmPassword">Confirmation</label>
+                                <input type="password" id="confirmPassword" name="confirmPassword" class="futuristic-input" placeholder="••••••••" required>
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary btn-full">
+                            Demander un stand
+                        </button>
+                        
+                        <div class="auth-links">
+                            <p>Déjà un compte ? <a href="#" onclick="showPage('login')">Se connecter</a></p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pending Approval Page -->
+        <div class="page hidden" id="pending-page">
+            <div class="status-container">
+                <div class="glass-card status-card">
+                    <div class="status-icon">⏳</div>
+                    <h2 class="status-title gradient-text">Demande en cours de validation</h2>
+                    <p class="status-description">
+                        Votre demande de stand a été reçue et est actuellement en cours d'examen par notre équipe.
+                    </p>
+                    
+                    <div class="status-steps">
+                        <div class="step completed">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h4>Demande reçue</h4>
+                                <p>Votre inscription a été enregistrée</p>
+                            </div>
+                        </div>
+                        <div class="step active">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h4>Validation en cours</h4>
+                                <p>Notre équipe examine votre dossier</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h4>Confirmation</h4>
+                                <p>Vous recevrez un email de confirmation</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="status-actions">
+                        <button class="btn btn-outline" onclick="showPage('welcome')">
+                            Retour à l'accueil
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Error Page (Account Not Active) -->
+        <div class="page hidden" id="error-page">
+            <div class="status-container">
+                <div class="glass-card status-card">
+                    <div class="status-icon error">❌</div>
+                    <h2 class="status-title gradient-text">Accès non autorisé</h2>
+                    <p class="status-description">
+                        Votre compte n'a pas encore été approuvé par l'administrateur. 
+                        Veuillez patienter ou contacter le support.
+                    </p>
+                    
+                    <div class="status-actions">
+                        <button class="btn btn-primary" onclick="showPage('login')">
+                            Retour à la connexion
+                        </button>
+                        <button class="btn btn-outline" onclick="showPage('welcome')">
+                            Accueil
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Admin Dashboard Page -->
+        <div class="page hidden" id="admin-dashboard-page">
+            <div class="dashboard-layout">
+                <aside class="sidebar">
+                    <div class="sidebar-header">
+                        <h2 class="gradient-text">Admin Panel</h2>
+                        <button class="sidebar-toggle-btn" id="sidebar-toggle">☰</button>
+                    </div>
+                    <nav class="sidebar-nav">
+                        <ul class="sidebar-menu">
+                            <li><a href="#" onclick="showPage('admin-dashboard')" class="sidebar-menu-item active">Dashboard</a></li>
+                            <li><a href="#" onclick="showPage('admin-requests')" class="sidebar-menu-item">Demandes de stand</a></li>
+                            <li><a href="#" onclick="showPage('admin-roles')" class="sidebar-menu-item">Gérer les rôles</a></li>
+                            <li><a href="#" onclick="showPage('admin-orders')" class="sidebar-menu-item">Commandes par stand</a></li>
+                        </ul>
+                    </nav>
+                    <div class="sidebar-footer">
+                        <button class="btn btn-outline btn-full" onclick="showPage('welcome')">Déconnexion</button>
+                    </div>
+                </aside>
+                <main class="dashboard-content">
+                    <header class="dashboard-header">
+                        <h1 class="gradient-text">Dashboard Admin</h1>
+                    </header>
+                    
+                    <div class="dashboard-grid">
+                        <div class="glass-card dashboard-card">
+                            <h3>Demandes en attente</h3>
+                            <div class="metric-value">12</div>
+                            <p>Nouveaux entrepreneurs à valider</p>
+                        </div>
+                        
+                        <div class="glass-card dashboard-card">
+                            <h3>Stands confirmés</h3>
+                            <div class="metric-value">48</div>
+                            <p>Entrepreneurs approuvés</p>
+                        </div>
+                        
+                        <div class="glass-card dashboard-card">
+                            <h3>Événement</h3>
+                            <div class="metric-value">7j</div>
+                            <p>Temps restant</p>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+
+        <!-- Admin Stand Requests Page -->
+        <div class="page hidden" id="admin-requests-page">
+            <div class="dashboard-layout">
+                <aside class="sidebar">
+                    <div class="sidebar-header">
+                        <h2 class="gradient-text">Admin Panel</h2>
+                        <button class="sidebar-toggle-btn" id="sidebar-toggle-requests">☰</button>
+                    </div>
+                    <nav class="sidebar-nav">
+                        <ul class="sidebar-menu">
+                            <li><a href="#" onclick="showPage('admin-dashboard')" class="sidebar-menu-item">Dashboard</a></li>
+                            <li><a href="#" onclick="showPage('admin-requests')" class="sidebar-menu-item active">Demandes de stand</a></li>
+                            <li><a href="#" onclick="showPage('admin-roles')" class="sidebar-menu-item">Gérer les rôles</a></li>
+                            <li><a href="#" onclick="showPage('admin-orders')" class="sidebar-menu-item">Commandes par stand</a></li>
+                        </ul>
+                    </nav>
+                    <div class="sidebar-footer">
+                        <button class="btn btn-outline btn-full" onclick="showPage('welcome')">Déconnexion</button>
+                    </div>
+                </aside>
+                <main class="dashboard-content">
+                    <header class="dashboard-header">
+                        <h1 class="gradient-text">Demandes de Stand</h1>
+                    </header>
+                    <div class="glass-card">
+                        <div class="table-responsive">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>Nom Entreprise</th>
+                                        <th>Contact</th>
+                                        <th>Email</th>
+                                        <th>Statut</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Gourmet Delights</td>
+                                        <td>Alice Dupont</td>
+                                        <td>alice@gourmet.com</td>
+                                        <td class="status-pending">En attente</td>
+                                        <td>
+                                            <button class="btn btn-success btn-sm" onclick="alert('Approuvé !')">Approuver</button>
+                                            <button class="btn btn-destructive btn-sm" onclick="alert('Rejeté !')">Rejeter</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Spice Route</td>
+                                        <td>Bob Martin</td>
+                                        <td>bob@spice.com</td>
+                                        <td class="status-pending">En attente</td>
+                                        <td>
+                                            <button class="btn btn-success btn-sm" onclick="alert('Approuvé !')">Approuver</button>
+                                            <button class="btn btn-destructive btn-sm" onclick="alert('Rejeté !')">Rejeter</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Sweet Treats</td>
+                                        <td>Carla Rossi</td>
+                                        <td>carla@sweet.com</td>
+                                        <td class="status-approved">Approuvé</td>
+                                        <td>
+                                            <button class="btn btn-destructive btn-sm" onclick="alert('Rejeté !')">Rejeter</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+
+        <!-- Admin Change User Role Page -->
+        <div class="page hidden" id="admin-roles-page">
+            <div class="dashboard-layout">
+                <aside class="sidebar">
+                    <div class="sidebar-header">
+                        <h2 class="gradient-text">Admin Panel</h2>
+                        <button class="sidebar-toggle-btn" id="sidebar-toggle-roles">☰</button>
+                    </div>
+                    <nav class="sidebar-nav">
+                        <ul class="sidebar-menu">
+                            <li><a href="#" onclick="showPage('admin-dashboard')" class="sidebar-menu-item">Dashboard</a></li>
+                            <li><a href="#" onclick="showPage('admin-requests')" class="sidebar-menu-item">Demandes de stand</a></li>
+                            <li><a href="#" onclick="showPage('admin-roles')" class="sidebar-menu-item active">Gérer les rôles</a></li>
+                            <li><a href="#" onclick="showPage('admin-orders')" class="sidebar-menu-item">Commandes par stand</a></li>
+                        </ul>
+                    </nav>
+                    <div class="sidebar-footer">
+                        <button class="btn btn-outline btn-full" onclick="showPage('welcome')">Déconnexion</button>
+                    </div>
+                </aside>
+                <main class="dashboard-content">
+                    <header class="dashboard-header">
+                        <h1 class="gradient-text">Gérer les Rôles Utilisateur</h1>
+                    </header>
+                    <div class="glass-card">
+                        <form class="form-grid">
+                            <div class="form-group">
+                                <label for="user-select">Sélectionner un utilisateur</label>
+                                <select id="user-select" class="futuristic-input">
+                                    <option value="">-- Choisir un utilisateur --</option>
+                                    <option value="user1">Alice Dupont (alice@gourmet.com)</option>
+                                    <option value="user2">Bob Martin (bob@spice.com)</option>
+                                    <option value="user3">Admin Principal (admin@eatdrink.com)</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="role-select">Nouveau rôle</label>
+                                <select id="role-select" class="futuristic-input">
+                                    <option value="entrepreneur">Entrepreneur</option>
+                                    <option value="admin">Admin</option>
+                                    <option value="user">Utilisateur Public</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Mettre à jour le rôle</button>
+                        </form>
+                    </div>
+                    <div class="glass-card mt-4">
+                        <h3>Liste des utilisateurs</h3>
+                        <div class="table-responsive">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>Nom</th>
+                                        <th>Email</th>
+                                        <th>Rôle actuel</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Alice Dupont</td>
+                                        <td>alice@gourmet.com</td>
+                                        <td>Entrepreneur</td>
+                                        <td><button class="btn btn-outline btn-sm" onclick="alert('Modifier le rôle de Alice')">Modifier</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Bob Martin</td>
+                                        <td>bob@spice.com</td>
+                                        <td>Entrepreneur</td>
+                                        <td><button class="btn btn-outline btn-sm" onclick="alert('Modifier le rôle de Bob')">Modifier</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Admin Principal</td>
+                                        <td>admin@eatdrink.com</td>
+                                        <td>Admin</td>
+                                        <td><button class="btn btn-outline btn-sm" onclick="alert('Modifier le rôle de l\'Admin')">Modifier</button></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+
+        <!-- Admin Orders by Stand Page -->
+        <div class="page hidden" id="admin-orders-page">
+            <div class="dashboard-layout">
+                <aside class="sidebar">
+                    <div class="sidebar-header">
+                        <h2 class="gradient-text">Admin Panel</h2>
+                        <button class="sidebar-toggle-btn" id="sidebar-toggle-admin-orders">☰</button>
+                    </div>
+                    <nav class="sidebar-nav">
+                        <ul class="sidebar-menu">
+                            <li><a href="#" onclick="showPage('admin-dashboard')" class="sidebar-menu-item">Dashboard</a></li>
+                            <li><a href="#" onclick="showPage('admin-requests')" class="sidebar-menu-item">Demandes de stand</a></li>
+                            <li><a href="#" onclick="showPage('admin-roles')" class="sidebar-menu-item">Gérer les rôles</a></li>
+                            <li><a href="#" onclick="showPage('admin-orders')" class="sidebar-menu-item active">Commandes par stand</a></li>
+                        </ul>
+                    </nav>
+                    <div class="sidebar-footer">
+                        <button class="btn btn-outline btn-full" onclick="showPage('welcome')">Déconnexion</button>
+                    </div>
+                </aside>
+                <main class="dashboard-content">
+                    <header class="dashboard-header">
+                        <h1 class="gradient-text">Commandes par Stand</h1>
+                    </header>
+                    <div class="glass-card">
+                        <div class="form-group mb-4">
+                            <label for="stand-filter">Filtrer par Stand</label>
+                            <select id="stand-filter" class="futuristic-input">
+                                <option value="all">Tous les stands</option>
+                                <option value="gourmet">Gourmet Delights</option>
+                                <option value="spice">Spice Route</option>
+                                <option value="sweet">Sweet Treats</option>
+                            </select>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>ID Commande</th>
+                                        <th>Stand</th>
+                                        <th>Client</th>
+                                        <th>Total</th>
+                                        <th>Statut</th>
+                                        <th>Date</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>#ED001</td>
+                                        <td>Gourmet Delights</td>
+                                        <td>Jean Dubois</td>
+                                        <td>55.00€</td>
+                                        <td class="status-completed">Livré</td>
+                                        <td>15/07/2025</td>
+                                    </tr>
+                                    <tr>
+                                        <td>#ED002</td>
+                                        <td>Spice Route</td>
+                                        <td>Marie Curie</td>
+                                        <td>32.50€</td>
+                                        <td class="status-pending">En attente</td>
+                                        <td>15/07/2025</td>
+                                    </tr>
+                                    <tr>
+                                        <td>#ED003</td>
+                                        <td>Gourmet Delights</td>
+                                        <td>Pierre Blanc</td>
+                                        <td>78.00€</td>
+                                        <td class="status-pending">En attente</td>
+                                        <td>15/07/2025</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+
+        <!-- Entrepreneur Dashboard Page -->
+        <div class="page hidden" id="entrepreneur-dashboard-page">
+            <div class="dashboard-layout">
+                <aside class="sidebar">
+                    <div class="sidebar-header">
+                        <h2 class="gradient-text">Mon Espace</h2>
+                        <button class="sidebar-toggle-btn" id="sidebar-toggle-entrepreneur">☰</button>
+                    </div>
+                    <nav class="sidebar-nav">
+                        <ul class="sidebar-menu">
+                            <li><a href="#" onclick="showPage('entrepreneur-dashboard')" class="sidebar-menu-item active">Dashboard</a></li>
+                            <li><a href="#" onclick="showPage('entrepreneur-products')" class="sidebar-menu-item">Mes produits</a></li>
+                            <li><a href="#" onclick="showPage('entrepreneur-orders')" class="sidebar-menu-item">Commandes reçues</a></li>
+                        </ul>
+                    </nav>
+                    <div class="sidebar-footer">
+                        <button class="btn btn-outline btn-full" onclick="showPage('welcome')">Déconnexion</button>
+                    </div>
+                </aside>
+                <main class="dashboard-content">
+                    <header class="dashboard-header">
+                        <h1 class="gradient-text">Dashboard Entrepreneur</h1>
+                    </header>
+                    
+                    <div class="dashboard-grid">
+                        <div class="glass-card dashboard-card">
+                            <h3>Commandes en attente</h3>
+                            <div class="metric-value">5</div>
+                            <p>Nouvelles commandes à préparer</p>
+                        </div>
+                        
+                        <div class="glass-card dashboard-card">
+                            <h3>Produits actifs</h3>
+                            <div class="metric-value">15</div>
+                            <p>Produits disponibles sur votre stand</p>
+                        </div>
+                        
+                        <div class="glass-card dashboard-card">
+                            <h3>Revenu estimé</h3>
+                            <div class="metric-value">1250€</div>
+                            <p>Total des ventes à ce jour</p>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+
+        <!-- Entrepreneur Products CRUD Page -->
+        <div class="page hidden" id="entrepreneur-products-page">
+            <div class="dashboard-layout">
+                <aside class="sidebar">
+                    <div class="sidebar-header">
+                        <h2 class="gradient-text">Mon Espace</h2>
+                        <button class="sidebar-toggle-btn" id="sidebar-toggle-products">☰</button>
+                    </div>
+                    <nav class="sidebar-nav">
+                        <ul class="sidebar-menu">
+                            <li><a href="#" onclick="showPage('entrepreneur-dashboard')" class="sidebar-menu-item">Dashboard</a></li>
+                            <li><a href="#" onclick="showPage('entrepreneur-products')" class="sidebar-menu-item active">Mes produits</a></li>
+                            <li><a href="#" onclick="showPage('entrepreneur-orders')" class="sidebar-menu-item">Commandes reçues</a></li>
+                        </ul>
+                    </nav>
+                    <div class="sidebar-footer">
+                        <button class="btn btn-outline btn-full" onclick="showPage('welcome')">Déconnexion</button>
+                    </div>
+                </aside>
+                <main class="dashboard-content">
+                    <header class="dashboard-header">
+                        <h1 class="gradient-text">Gestion des Produits</h1>
+                        <button class="btn btn-primary" onclick="showPage('entrepreneur-product-add')">Ajouter un produit</button>
+                    </header>
+                    <div class="glass-card">
+                        <h3>Liste de vos produits</h3>
+                        <div class="product-grid">
+                            <div class="product-card">
+                                <img src="/placeholder.svg?height=100&width=100" alt="Produit 1" class="product-image">
+                                <div class="product-info">
+                                    <h4>Tarte aux Truffes</h4>
+                                    <p class="product-description">Délicieuse tarte aux truffes noires fraîches.</p>
+                                    <p class="product-price">25.00€</p>
+                                </div>
+                                <div class="product-actions">
+                                    <button class="btn btn-outline btn-sm" onclick="showPage('entrepreneur-product-edit')">Modifier</button>
+                                    <button class="btn btn-destructive btn-sm" onclick="alert('Produit supprimé !')">Supprimer</button>
+                                </div>
+                            </div>
+                            <div class="product-card">
+                                <img src="/placeholder.svg?height=100&width=100" alt="Produit 2" class="product-image">
+                                <div class="product-info">
+                                    <h4>Cocktail Exotique</h4>
+                                    <p class="product-description">Boisson rafraîchissante aux fruits tropicaux.</p>
+                                    <p class="product-price">12.00€</p>
+                                </div>
+                                <div class="product-actions">
+                                    <button class="btn btn-outline btn-sm" onclick="showPage('entrepreneur-product-edit')">Modifier</button>
+                                    <button class="btn btn-destructive btn-sm" onclick="alert('Produit supprimé !')">Supprimer</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+
+        <!-- Entrepreneur Add Product Page -->
+        <div class="page hidden" id="entrepreneur-product-add-page">
+            <div class="dashboard-layout">
+                <aside class="sidebar">
+                    <div class="sidebar-header">
+                        <h2 class="gradient-text">Mon Espace</h2>
+                        <button class="sidebar-toggle-btn" id="sidebar-toggle-add-product">☰</button>
+                    </div>
+                    <nav class="sidebar-nav">
+                        <ul class="sidebar-menu">
+                            <li><a href="#" onclick="showPage('entrepreneur-dashboard')" class="sidebar-menu-item">Dashboard</a></li>
+                            <li><a href="#" onclick="showPage('entrepreneur-products')" class="sidebar-menu-item active">Mes produits</a></li>
+                            <li><a href="#" onclick="showPage('entrepreneur-orders')" class="sidebar-menu-item">Commandes reçues</a></li>
+                        </ul>
+                    </nav>
+                    <div class="sidebar-footer">
+                        <button class="btn btn-outline btn-full" onclick="showPage('welcome')">Déconnexion</button>
+                    </div>
+                </aside>
+                <main class="dashboard-content">
+                    <header class="dashboard-header">
+                        <h1 class="gradient-text">Ajouter un Produit</h1>
+                        <button class="back-btn" onclick="showPage('entrepreneur-products')">← Retour</button>
+                    </header>
+                    <div class="glass-card">
+                        <form id="add-product-form" class="form-grid">
+                            <div class="form-group">
+                                <label for="product-name">Nom du produit</label>
+                                <input type="text" id="product-name" class="futuristic-input" placeholder="Ex: Tarte aux Truffes" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="product-description">Description</label>
+                                <textarea id="product-description" class="futuristic-input" rows="4" placeholder="Décrivez votre produit..." required></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="product-price">Prix (€)</label>
+                                <input type="number" id="product-price" class="futuristic-input" step="0.01" placeholder="Ex: 25.00" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="product-image">Image du produit</label>
+                                <input type="file" id="product-image" class="futuristic-input" accept="image/*">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Ajouter le produit</button>
+                        </form>
+                    </div>
+                </main>
+            </div>
+        </div>
+
+        <!-- Entrepreneur Edit Product Page -->
+        <div class="page hidden" id="entrepreneur-product-edit-page">
+            <div class="dashboard-layout">
+                <aside class="sidebar">
+                    <div class="sidebar-header">
+                        <h2 class="gradient-text">Mon Espace</h2>
+                        <button class="sidebar-toggle-btn" id="sidebar-toggle-edit-product">☰</button>
+                    </div>
+                    <nav class="sidebar-nav">
+                        <ul class="sidebar-menu">
+                            <li><a href="#" onclick="showPage('entrepreneur-dashboard')" class="sidebar-menu-item">Dashboard</a></li>
+                            <li><a href="#" onclick="showPage('entrepreneur-products')" class="sidebar-menu-item active">Mes produits</a></li>
+                            <li><a href="#" onclick="showPage('entrepreneur-orders')" class="sidebar-menu-item">Commandes reçues</a></li>
+                        </ul>
+                    </nav>
+                    <div class="sidebar-footer">
+                        <button class="btn btn-outline btn-full" onclick="showPage('welcome')">Déconnexion</button>
+                    </div>
+                </aside>
+                <main class="dashboard-content">
+                    <header class="dashboard-header">
+                        <h1 class="gradient-text">Modifier le Produit</h1>
+                        <button class="back-btn" onclick="showPage('entrepreneur-products')">← Retour</button>
+                    </header>
+                    <div class="glass-card">
+                        <form id="edit-product-form" class="form-grid">
+                            <div class="form-group">
+                                <label for="edit-product-name">Nom du produit</label>
+                                <input type="text" id="edit-product-name" class="futuristic-input" value="Tarte aux Truffes" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="edit-product-description">Description</label>
+                                <textarea id="edit-product-description" class="futuristic-input" rows="4" required>Délicieuse tarte aux truffes noires fraîches.</textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="edit-product-price">Prix (€)</label>
+                                <input type="number" id="edit-product-price" class="futuristic-input" step="0.01" value="25.00" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="edit-product-image">Image du produit</label>
+                                <input type="file" id="edit-product-image" class="futuristic-input" accept="image/*">
+                                <p class="text-muted mt-1">Image actuelle: tarte-truffes.jpg</p>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Enregistrer les modifications</button>
+                        </form>
+                    </div>
+                </main>
+            </div>
+        </div>
+
+        <!-- Entrepreneur Orders Received Page -->
+        <div class="page hidden" id="entrepreneur-orders-page">
+            <div class="dashboard-layout">
+                <aside class="sidebar">
+                    <div class="sidebar-header">
+                        <h2 class="gradient-text">Mon Espace</h2>
+                        <button class="sidebar-toggle-btn" id="sidebar-toggle-entrepreneur-orders">☰</button>
+                    </div>
+                    <nav class="sidebar-nav">
+                        <ul class="sidebar-menu">
+                            <li><a href="#" onclick="showPage('entrepreneur-dashboard')" class="sidebar-menu-item">Dashboard</a></li>
+                            <li><a href="#" onclick="showPage('entrepreneur-products')" class="sidebar-menu-item">Mes produits</a></li>
+                            <li><a href="#" onclick="showPage('entrepreneur-orders')" class="sidebar-menu-item active">Commandes reçues</a></li>
+                        </ul>
+                    </nav>
+                    <div class="sidebar-footer">
+                        <button class="btn btn-outline btn-full" onclick="showPage('welcome')">Déconnexion</button>
+                    </div>
+                </aside>
+                <main class="dashboard-content">
+                    <header class="dashboard-header">
+                        <h1 class="gradient-text">Commandes Reçues</h1>
+                    </header>
+                    <div class="glass-card">
+                        <div class="table-responsive">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>ID Commande</th>
+                                        <th>Client</th>
+                                        <th>Produits</th>
+                                        <th>Total</th>
+                                        <th>Statut</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>#C001</td>
+                                        <td>Sophie Dubois</td>
+                                        <td>Tarte aux Truffes (x1), Cocktail Exotique (x2)</td>
+                                        <td>49.00€</td>
+                                        <td class="status-pending">En attente</td>
+                                        <td>
+                                            <button class="btn btn-success btn-sm" onclick="alert('Commande marquée comme livrée !')">Marquer livré</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>#C002</td>
+                                        <td>Marc Lefevre</td>
+                                        <td>Cocktail Exotique (x3)</td>
+                                        <td>36.00€</td>
+                                        <td class="status-completed">Livré</td>
+                                        <td>
+                                            <button class="btn btn-outline btn-sm" disabled>Livré</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+
+        <!-- Public Stands List Page -->
+        <div class="page hidden light-theme" id="stands-page">
+            <div class="public-layout">
+                <!-- Sidebar is NOT present by default -->
+                <main class="public-content">
+                    <header class="public-header">
+                        <h1 class="gradient-text">Nos Stands Partenaires</h1>
+                    </header>
+                    <p class="text-muted mb-5 text-center">Découvrez les saveurs uniques de nos entrepreneurs.</p>
+                    <div class="stands-grid">
+                        <div class="glass-card stand-card">
+                            <img src="/placeholder.svg?height=150&width=250" alt="Gourmet Delights" class="stand-image">
+                            <div class="stand-info">
+                                <h3>Gourmet Delights</h3>
+                                <p>Cuisine française raffinée et pâtisseries d'exception.</p>
+                                <button class="btn btn-primary btn-sm" onclick="showPage('stand-products')">Voir les produits</button>
+                            </div>
+                        </div>
+                        <div class="glass-card stand-card">
+                            <img src="/placeholder.svg?height=150&width=250" alt="Spice Route" class="stand-image">
+                            <div class="stand-info">
+                                <h3>Spice Route</h3>
+                                <p>Voyage culinaire à travers les saveurs d'Asie et d'Afrique.</p>
+                                <button class="btn btn-primary btn-sm" onclick="showPage('stand-products')">Voir les produits</button>
+                            </div>
+                        </div>
+                        <div class="glass-card stand-card">
+                            <img src="/placeholder.svg?height=150&width=250" alt="Sweet Treats" class="stand-image">
+                            <div class="stand-info">
+                                <h3>Sweet Treats</h3>
+                                <p>Desserts gourmands et créations sucrées pour tous les goûts.</p>
+                                <button class="btn btn-primary btn-sm" onclick="showPage('stand-products')">Voir les produits</button>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+        <script>
+        function openStandsSidebar() {
+            // If sidebar already exists, just show it
+            if (document.getElementById('stands-sidebar')) {
+                document.getElementById('stands-sidebar').style.display = 'block';
+                return;
+            }
+            // Create sidebar element
+            var sidebar = document.createElement('aside');
+            sidebar.className = 'sidebar';
+            sidebar.id = 'stands-sidebar';
+            sidebar.innerHTML = `
+                <div class="sidebar-header">
+                    <h2 class="gradient-text">Eat&Drink</h2>
+                    <button class="sidebar-toggle-btn" onclick="closeStandsSidebar()">✕</button>
+                </div>
+                <nav class="sidebar-nav">
+                    <ul class="sidebar-menu">
+                        <li><a href="#" onclick="showPage('welcome')" class="sidebar-menu-item">Accueil</a></li>
+                        <li><a href="#" onclick="showPage('stands')" class="sidebar-menu-item active">Tous les Stands</a></li>
+                        <li><a href="#" onclick="showPage('search')" class="sidebar-menu-item">Recherche</a></li>
+                        <li><a href="#" onclick="showPage('cart')" class="sidebar-menu-item">Mon Panier</a></li>
+                    </ul>
+                </nav>
+                <div class="sidebar-footer">
+                    <button class="btn btn-outline btn-full" onclick="showPage('login')">Se connecter</button>
+                </div>
+            `;
+            // Insert sidebar into public-layout
+            var layout = document.querySelector('#stands-page .public-layout');
+            layout.insertBefore(sidebar, layout.firstChild);
+        }
+        function closeStandsSidebar() {
+            var sidebar = document.getElementById('stands-sidebar');
+            if (sidebar) sidebar.remove();
+        }
+        </script>
+
+        <!-- Public Stand Products Page -->
+        <div class="page hidden light-theme" id="stand-products-page">
+            <div class="public-layout">
+                <aside class="sidebar">
+                    <div class="sidebar-header">
+                        <h2 class="gradient-text">Eat&Drink</h2>
+                        <button class="sidebar-toggle-btn" id="sidebar-toggle-products-public">☰</button>
+                    </div>
+                    <nav class="sidebar-nav">
+                        <ul class="sidebar-menu">
+                            <li><a href="#" onclick="showPage('welcome')" class="sidebar-menu-item">Accueil</a></li>
+                            <li><a href="#" onclick="showPage('stands')" class="sidebar-menu-item">Tous les Stands</a></li>
+                            <li><a href="#" onclick="showPage('search')" class="sidebar-menu-item">Recherche</a></li>
+                            <li><a href="#" onclick="showPage('cart')" class="sidebar-menu-item active">Mon Panier</a></li>
+                        </ul>
+                    </nav>
+                    <div class="sidebar-footer">
+                        <button class="btn btn-outline btn-full" onclick="showPage('login')">Se connecter</button>
+                    </div>
+                </aside>
+                <main class="public-content">
+                    <header class="public-header">
+                        <h1 class="gradient-text">Produits de Gourmet Delights</h1>
+                        <button class="sidebar-toggle-btn desktop-hidden" onclick="toggleSidebar('#stand-products-page .sidebar')">☰</button>
+                    </header>
+                    <p class="text-muted mb-5 text-center">Découvrez nos créations culinaires.</p>
+                    <div class="product-grid">
+                        <div class="glass-card product-card-public">
+                            <img src="/placeholder.svg?height=150&width=150" alt="Tarte aux Truffes" class="product-image">
+                            <div class="product-info">
+                                <h4>Tarte aux Truffes</h4>
+                                <p class="product-description">Délicieuse tarte aux truffes noires fraîches.</p>
+                                <p class="product-price">25.00€</p>
+                            </div>
+                            <button class="btn btn-primary btn-sm" onclick="addToCart('Tarte aux Truffes', 25.00)">Ajouter au panier</button>
+                        </div>
+                        <div class="glass-card product-card-public">
+                            <img src="/placeholder.svg?height=150&width=150" alt="Cocktail Exotique" class="product-image">
+                            <div class="product-info">
+                                <h4>Cocktail Exotique</h4>
+                                <p class="product-description">Boisson rafraîchissante aux fruits tropicaux.</p>
+                                <p class="product-price">12.00€</p>
+                            </div>
+                            <button class="btn btn-primary btn-sm" onclick="addToCart('Cocktail Exotique', 12.00)">Ajouter au panier</button>
+                        </div>
+                        <div class="glass-card product-card-public">
+                            <img src="/placeholder.svg?height=150&width=150" alt="Mini Burgers" class="product-image">
+                            <div class="product-info">
+                                <h4>Mini Burgers</h4>
+                                <p class="product-description">Assortiment de mini burgers gourmands.</p>
+                                <p class="product-price">18.00€</p>
+                            </div>
+                            <button class="btn btn-primary btn-sm" onclick="addToCart('Mini Burgers', 18.00)">Ajouter au panier</button>
+                        </div>
+                    </div>
+                    <div class="cart-summary-fixed">
+                        <button class="btn btn-secondary" onclick="showPage('cart')">
+                            Voir mon panier (<span id="cart-item-count">0</span> articles)
+                        </button>
+                    </div>
+                </main>
+            </div>
+        </div>
+
+        <!-- Public Cart Page -->
+        <div class="page hidden light-theme" id="cart-page">
+            <div class="public-layout">
+                <aside class="sidebar">
+                    <div class="sidebar-header">
+                        <h2 class="gradient-text">Eat&Drink</h2>
+                        <button class="sidebar-toggle-btn" id="sidebar-toggle-cart">☰</button>
+                    </div>
+                    <nav class="sidebar-nav">
+                        <ul class="sidebar-menu">
+                            <li><a href="#" onclick="showPage('welcome')" class="sidebar-menu-item">Accueil</a></li>
+                            <li><a href="#" onclick="showPage('stands')" class="sidebar-menu-item">Tous les Stands</a></li>
+                            <li><a href="#" onclick="showPage('search')" class="sidebar-menu-item">Recherche</a></li>
+                            <li><a href="#" onclick="showPage('cart')" class="sidebar-menu-item active">Mon Panier</a></li>
+                        </ul>
+                    </nav>
+                    <div class="sidebar-footer">
+                        <button class="btn btn-outline btn-full" onclick="showPage('login')">Se connecter</button>
+                    </div>
+                </aside>
+                <main class="public-content">
+                    <header class="public-header">
+                        <h1 class="gradient-text">Votre Panier</h1>
+                        <button class="sidebar-toggle-btn desktop-hidden" onclick="toggleSidebar('#cart-page .sidebar')">☰</button>
+                    </header>
+                    <div class="glass-card cart-card">
+                        <div id="cart-items" class="cart-items">
+                            <!-- Cart items will be dynamically added here -->
+                            <p class="text-muted text-center" id="empty-cart-message">Votre panier est vide.</p>
+                        </div>
+                        <div class="cart-summary">
+                            <div class="cart-total">
+                                <span>Total:</span>
+                                <span id="cart-total-price" class="gradient-text">0.00€</span>
+                            </div>
+                            <button class="btn btn-primary btn-full" onclick="alert('Commande passée !')">Commander</button>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+
+        <!-- Search Page -->
+        <div class="page hidden light-theme" id="search-page">
+            <div class="public-layout">
+                <aside class="sidebar">
+                    <div class="sidebar-header">
+                        <h2 class="gradient-text">Eat&Drink</h2>
+                        <button class="sidebar-toggle-btn" id="sidebar-toggle-search">☰</button>
+                    </div>
+                    <nav class="sidebar-nav">
+                        <ul class="sidebar-menu">
+                            <li><a href="#" onclick="showPage('welcome')" class="sidebar-menu-item">Accueil</a></li>
+                            <li><a href="#" onclick="showPage('stands')" class="sidebar-menu-item">Tous les Stands</a></li>
+                            <li><a href="#" onclick="showPage('search')" class="sidebar-menu-item active">Recherche</a></li>
+                            <li><a href="#" onclick="showPage('cart')" class="sidebar-menu-item">Mon Panier</a></li>
+                        </ul>
+                    </nav>
+                    <div class="sidebar-footer">
+                        <button class="btn btn-outline btn-full" onclick="showPage('login')">Se connecter</button>
+                    </div>
+                </aside>
+                <main class="public-content">
+                    <header class="public-header">
+                        <h1 class="gradient-text">Recherche</h1>
+                        <button class="sidebar-toggle-btn desktop-hidden" onclick="toggleSidebar('#search-page .sidebar')">☰</button>
+                    </header>
+                    <div class="glass-card search-card">
+                        <div class="form-group">
+                            <label for="search-input" class="sr-only">Rechercher</label>
+                            <input type="text" id="search-input" class="futuristic-input" placeholder="Rechercher un stand, un produit...">
+                        </div>
+                        <div id="search-suggestions" class="search-suggestions hidden">
+                            <p class="text-muted">Suggestions:</p>
+                            <ul>
+                                <li><a href="#" onclick="alert('Suggestion: Tarte aux Truffes')">Tarte aux Truffes</a></li>
+                                <li><a href="#" onclick="alert('Suggestion: Gourmet Delights')">Gourmet Delights</a></li>
+                                <li><a href="#" onclick="alert('Suggestion: Cocktails')">Cocktails</a></li>
+                            </ul>
+                        </div>
+                        <div id="search-results" class="search-results hidden">
+                            <h3>Résultats de recherche</h3>
+                            <div class="product-grid">
+                                <div class="glass-card product-card-public">
+                                    <img src="/placeholder.svg?height=100&width=100" alt="Résultat 1" class="product-image">
+                                    <div class="product-info">
+                                        <h4>Produit trouvé 1</h4>
+                                        <p class="product-description">Description courte du produit trouvé.</p>
+                                        <p class="product-price">15.00€</p>
+                                    </div>
+                                    <button class="btn btn-primary btn-sm" onclick="addToCart('Produit trouvé 1', 15.00)">Ajouter au panier</button>
+                                </div>
+                                <div class="glass-card product-card-public">
+                                    <img src="/placeholder.svg?height=100&width=100" alt="Résultat 2" class="product-image">
+                                    <div class="product-info">
+                                        <h4>Produit trouvé 2</h4>
+                                        <p class="product-description">Autre description de produit.</p>
+                                        <p class="product-price">20.00€</p>
+                                    </div>
+                                    <button class="btn btn-primary btn-sm" onclick="addToCart('Produit trouvé 2', 20.00)">Ajouter au panier</button>
+                                </div>
+                            </div>
+                            <p class="text-muted text-center mt-4" id="no-search-results">Aucun résultat trouvé.</p>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+
+        <!-- Error 404 Page -->
+        <div class="page hidden" id="404-page">
+            <div class="status-container">
+                <div class="glass-card status-card">
+                    <div class="status-icon error">🚫</div>
+                    <h2 class="status-title gradient-text">Erreur 404</h2>
+                    <p class="status-description">
+                        Oups ! La page que vous recherchez n'existe pas.
+                    </p>
+                    <div class="status-actions">
+                        <button class="btn btn-primary" onclick="showPage('welcome')">
+                            Retour à l'accueil
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
