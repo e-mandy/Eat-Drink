@@ -19,6 +19,9 @@ return new class extends Migration
             //Le prix ne doit pas dépasser 7 chiffres au total et ne doit pas dépasser 2 chiffres après la virgule
             $table->decimal('prix', 7, 2);
             $table->string('photo');
+
+            $table->unsignedBigInteger('id_stand');
+            $table->foreign('id_stand')->references('id')->on('stands');
             $table->timestamps();
         });
     }
