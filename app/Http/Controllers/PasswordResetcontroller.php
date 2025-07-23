@@ -37,7 +37,7 @@ class PasswordResetController extends Controller
     // Affiche le formulaire de réinitialisation
     public function showResetForm($token)
     {
-        return view('auth.passwords.reset', ['token' => $token]);
+        return view('auth.reinitialise_mdp', ['token' => $token]);
     }
 
     // Traitement de la réinitialisation
