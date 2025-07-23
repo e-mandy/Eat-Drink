@@ -4,8 +4,8 @@
       <span class="text-[#E8492A]">Mon Stand</span>
     </div>
     <nav class="flex flex-col gap-5 text-sm">
-      <a href="#" class="hover:text-[#E8492A]">Tableau de bord</a>
-      <a href="#">Produits</a>
+      <a href="{{ route('entrepreneur.dashboard') }}" class="hover:text-[#E8492A]">Tableau de bord</a>
+      <a href="{{ route('entrepreneur.produit.index') }}">Produits</a>
       <a href="#">Stands</a>
     </nav>
 </aside>

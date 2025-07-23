@@ -24,10 +24,7 @@
             </button>
         </form>
 
-        <p class="text-sm text-center">
-            Vous vous souvenez de votre mot de passe ? 
-            <a href="login.html" class="text-[#E8492A]">Connectez-vous</a>
-        </p>
+        <p class="text-sm text-center">Vous vous souvenez de votre mot de passe ? <a href="{{ route('auth.connexion') }}" class="text-[#E8492A]">Connectez-vous</a></p>
     </div>
 
 @endsection
