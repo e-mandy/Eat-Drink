@@ -33,6 +33,10 @@ Route::group([
         return view('auth.connexion');
     })->name('connexion');
 
+    Route::get('/reinitialise_mdp', function(){
+        return view('auth.reinitialise_mdp');
+    });
+
     Route::post('/connexion',[AuthController::class,'connexion'])->name('connexion.submit');
 
     Route::post('/inscription',[AuthController::class,'inscription'])->name('inscription.submit');
