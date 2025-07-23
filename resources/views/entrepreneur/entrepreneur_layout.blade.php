@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,9 +8,9 @@
     <title>@yield('titre')</title>
 </head>
 <body>
-    
-    <div class="w-max-screen h-screen flex flex-col">
-        @yield('auth-form')
+    <div class="min-h-screen bg-[#f7e3c9] flex text-[#262424] font-sans">
+        @include('partials.sidebar')
+        @yield('entrepreneur')
     </div>
 </body>
 </html>

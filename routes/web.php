@@ -26,3 +26,9 @@ Route::group([
         return view('auth.email_verification');
     })->name('email_verification');
 });
+
+Route::group(['as' => "entrepreneur.", 'prefix' => "entrepreneur"], function(){
+    Route::get('/dashboard', function(){
+        return view('entrepreneur.dashboard');
+    })->name('dashboard');
+});
