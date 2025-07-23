@@ -6,6 +6,15 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/inscription', function () {
+Route::group([
+    'as' => 'auth.',
+    'prefix' => 'auth'
+    ], function (){
+    Route::get('/inscription', function () {
     return view('auth.inscription');
+    })->name('inscription');
+    
+    Route::get('/connexion', function () {
+        return view('auth.connexion');
+    })->name('connexion');
 });

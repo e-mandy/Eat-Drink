@@ -18,6 +18,6 @@
             <input type="password" name="password_verifie" placeholder="Entrez à nouveau votre mot de passe" class="border-1 rounded-lg mb-5 px-3 py-2">
             <button type="submit" class="bg-[#262424] py-2 rounded-lg text-white">S'inscrire</button>
         </form>
-        <p class="text-sm">Vous avez déjà un compte entrepreneur ?  <a href="#" class="text-[#E8492A]">Connectez-vous</a>.</p>
+        <p class="text-sm">Vous avez déjà un compte entrepreneur ?  <a href="{{ route('auth.connexion') }}" class="text-[#E8492A]">Connectez-vous</a>.</p>
     </div>
 @endsection
