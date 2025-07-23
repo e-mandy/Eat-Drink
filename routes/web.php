@@ -10,21 +10,52 @@ Route::get('/', function () {
     return view('home');
 });
 
+Route::group([
+    'as' => 'auth.',
+    'prefix' => 'auth'
+    ], function (){
+    Route::get('/connexion', function () {
+        return view('auth.connexion');
+    })->name('connexion');
+});
 
 //Pour afficher le formulaire
-Route::get('/inscription', function () {
-    return view('inscription');
-})->name('inscription.form');
+Route::group([
+    'as' => 'auth.',
+    'prefix' => 'auth'
+], function(){
 
-Route::get('/mot-de-passe-oublie', [PasswordResetController::class, 'showLinkRequestForm'])->name('password.request');
+    Route::get('/inscription', function () {
+        return view('auth.inscription');
+    })->name('inscription');
 
-Route::get('/reset-password/{token}', [PasswordResetController::class, 'showResetForm'])->name('password.reset');
+    Route::get('/connexion', function () {
+        return view('auth.connexion');
+    })->name('connexion');
 
-// Route pour la connexion
-Route::post('/connexion',[AuthController::class,'connexion'])->name('connexion.submit');
+    Route::post('/connexion',[AuthController::class,'connexion'])->name('connexion.submit');
+
+    Route::post('/inscription',[AuthController::class,'inscription'])->name('inscription.submit');
+
+    Route::get('/mot-de-passe-oublie', [PasswordResetController::class, 'showLinkRequestForm'])->name('password.request');
+    
+    Route::get('/reset-password/{token}', [PasswordResetController::class, 'showResetForm'])->name('password.reset');
+
+    Route::post('/mot-de-passe-email', [PasswordResetController::class, 'sendResetLinkEmail'])->name('password.email');
+
+    Route::post('/reset-password', [PasswordResetController::class, 'reset'])->name('password.update');
+});
+
+
 //Route pour l'inscription
-Route::post('/inscription',[AuthController::class,'inscription'])->name('inscription.submit');
-//Route pour mot de passe et email
-Route::post('/mot-de-passe-email', [PasswordResetController::class, 'sendResetLinkEmail'])->name('password.email');
-Route::post('/reset-password', [PasswordResetController::class, 'reset'])->name('password.update');
 
+//Route pour mot de passe et email
+
+
+Route::get('/dashboard', function(){
+    return view('entrepreneur.dashboard');
+})->name('dashboard');
+
+Route::group(['as' => "entrepreneur.", 'prefix' => "entrepreneur", 'middleware' => ''], function(){
+    
+});
