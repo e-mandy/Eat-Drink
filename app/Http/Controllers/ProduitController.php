@@ -21,6 +21,6 @@ class ProduitController extends Controller
     }
 
     public function update(Produit $produit){
-        return view('produit.update', compact('produit', $produit));
+        return view('produit.create', compact('produit', $produit));
     }
 }

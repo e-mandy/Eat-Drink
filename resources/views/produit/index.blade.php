@@ -6,7 +6,7 @@
 
     <div class="flex justify-between items-center mb-6">
       <h1 class="text-3xl font-bold">Bienvenue, Entrepreneur !</h1>
-      <button class="bg-[#E8492A] text-white px-4 py-2 rounded-lg shadow hover:bg-[#cc3f20]">+ Nouveau Produit</button>
+      <a href="{{ route('entrepreneur.produit.create') }}" class="bg-[#E8492A] text-white px-4 py-2 rounded-lg shadow hover:bg-[#cc3f20]">+ Nouveau Produit</a>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">

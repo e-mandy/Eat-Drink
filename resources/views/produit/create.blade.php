@@ -9,15 +9,20 @@
     <h4 class="logo flex justify-center items-center gap-2 text-2xl font-bold text-[#262424]">
       Eat <img src="{{ asset('assets/images/stand.png') }}" class="h-10 rotate-45" />Drink
     </h4>
-    <h1 class="text-3xl font-extrabold text-[#E8492A] mt-2">Ajouter un produit</h1>
-    <p class="text-gray-600 mt-1">Remplis les informations pour enrichir ton stand.</p>
+    @if(isset($produit))
+        <h1 class="text-3xl font-extrabold text-[#E8492A] mt-2">Modifier un produit</h1>
+        <p class="text-gray-600 mt-1">Modifiez les informations du produit de votre stand.</p>
+        @else
+        <h1 class="text-3xl font-extrabold text-[#E8492A] mt-2">Ajouter un produit</h1>
+        <p class="text-gray-600 mt-1">Remplissez les informations pour enrichir votre stand.</p>
+    @endif
   </div>
 
   <form action="{{ route('entrepreneur.produit.store') }}" method="POST" class="flex flex-col gap-4">
     @csrf
     <div>
       <label class="block text-sm font-medium text-gray-700 mb-1">Nom du produit</label>
-      <input type="text" name="name" placeholder="Attieke poisson" class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#E8492A]"/>
+      <input type="text" name="nom" placeholder="Attieke poisson" class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#E8492A]" old="{{ isset($produit) ? old('nom', $produit->nom) : old('nom') }}" />
     </div>
 
     <div>
