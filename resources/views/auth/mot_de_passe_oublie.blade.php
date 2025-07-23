@@ -17,6 +17,7 @@
         </p>
 
         <form method="POST" action="#" class="flex flex-col w-[95%] mb-4">
+            @csrf
             <input type="email" name="email" placeholder="Votre adresse email" class="border-1 rounded-lg mb-5 px-3 py-2">
             <button type="submit" class="bg-[#262424] py-2 rounded-lg text-white">
                 Envoyer le lien

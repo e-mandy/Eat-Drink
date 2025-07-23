@@ -12,6 +12,7 @@
         </div>
         <p class="accroche text-lg mb-3">It's time to eat & drink so good meal</p>
         <form method="POST" action="#" class="flex flex-col w-[95%] mb-4">
+            @csrf
             <input type="text" name="nom" placeholder="Entrez votre nom" class="border-1 rounded-lg mb-5 px-3 py-2">
             <input type="email" name="email" placeholder="Entrez votre email" class="border-1 rounded-lg mb-5 px-3 py-2">
             <input type="password" name="password" placeholder="Entrez votre mot de passe" class="border-1 rounded-lg mb-5 px-3 py-2">

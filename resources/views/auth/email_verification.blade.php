@@ -18,6 +18,7 @@
         </p>
 
         <form method="POST" action="#" class="flex flex-col w-[95%] mb-4">
+            @csrf
             <input type="text" name="verification_code" placeholder="Code de validation" class="border-1 rounded-lg mb-5 px-3 py-2 text-center tracking-widest text-lg font-semibold">
             <button type="submit" class="bg-[#262424] py-2 rounded-lg text-white">
                 Valider mon compte

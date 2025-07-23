@@ -17,13 +17,14 @@
         </p>
 
         <form method="POST" action="{{ route('auth.password.update') }}" class="flex flex-col w-[95%] mb-4">
+            @csrf
             <input type="email" name="email" placeholder="Entrez votre email" class="border-1 rounded-lg mb-5 px-3 py-2"/>
             <input type="password" name="new_password" placeholder="Entrez votre nouveau mot de passe" class="border-1 rounded-lg mb-5 px-3 py-2"/>
             <input type="password" name="confirm_password" placeholder="Confirmez votre mot de passe" class="border-1 rounded-lg mb-5 px-3 py-2"/>
             <button type="submit" class="bg-[#262424] py-2 rounded-lg text-white">Réinitialiser le mot de passe</button>
         </form>
 
-        <p class="text-sm">Vous vous souvenez de votre mot de passe ? <a href="#" class="text-[#E8492A]">Connectez-vous</a>.</p>
+        <p class="text-sm">Vous vous souvenez de votre mot de passe ? <a href="{{ route('auth.connexion') }}" class="text-[#E8492A]">Connectez-vous</a>.</p>
     </div>
 
 @endsection

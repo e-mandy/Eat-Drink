@@ -39,7 +39,7 @@ Route::group([
 
     Route::get('/mot-de-passe-oublie', [PasswordResetController::class, 'showLinkRequestForm'])->name('password.request');
     
-    Route::get('/reset-password/{token}', [PasswordResetController::class, 'showResetForm'])->name('reinitialise_mdp');
+    Route::get('/reinitialise_mdp/{token}', [PasswordResetController::class, 'showResetForm'])->name('reinitialise_mdp');
 
     Route::post('/mot-de-passe-email', [PasswordResetController::class, 'sendResetLinkEmail'])->name('password.email');
 

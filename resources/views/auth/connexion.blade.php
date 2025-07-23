@@ -15,6 +15,7 @@
         <p class="accroche text-lg mb-3">Ravi de vous revoir. Connectez-vous !</p>
         
         <form method="POST" action="{{ route('auth.connexion.submit') }}" class="flex flex-col w-[95%] mb-4">
+            @csrf
             <input type="email" name="email" placeholder="Entrez votre email" class="border-1 rounded-lg mb-5 px-3 py-2">
             <input type="password" name="password" placeholder="Entrez votre mot de passe" class="border-1 rounded-lg mb-5 px-3 py-2">
             <button type="submit" class="bg-[#262424] py-2 rounded-lg text-white">Se connecter</button>
