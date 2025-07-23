@@ -10,7 +10,9 @@ use Illuminate\Support\Facades\Hash;
 
 use Illuminate\Support\Str;
 
-class PasswordResetcontroller extends Controller
+
+class PasswordResetController extends Controller
+
 {
      // Affiche le formulaire de demande de lien
     public function showLinkRequestForm()
@@ -58,7 +60,11 @@ class PasswordResetcontroller extends Controller
         );
 
         return $status === Password::PASSWORD_RESET
-            ? redirect()->route('connexion.form')->with('status', __($status))
+            ? redirect()->route('connexion.form')->with('success', 'Mot de passe reinitialisé')
+
             : back()->withErrors(['email' => [__($status)]]);
+         
+
+
     }
 }

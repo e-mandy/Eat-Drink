@@ -39,20 +39,16 @@ class AuthController extends Controller
     //Validons les donnees
     $request->validate([
         'nom'=>'required|string|max:255',
-        'prenom'=>'required|string|max:255',
         'email'=>'required|email|unique:users,email',
         'password'=>'required|confirmed',
-        'nom_entreprise'=>'required|string|max:255',
         'biography'=>'nullable|string|max:1000',
 
     ]);
     //Creation de l'utilisateur
     $user = User ::create([
             'nom' => $request->nom,
-            'prenom' => $request->prenom,
             'email' => $request->email,
             'password' =>  Hash::make($request->password),
-            'nom_entreprise' => $request->nom_entreprise,
             'biography' => $request->biographyss,
             'role'=>'entrepreneur_en_attente',
     ]);
