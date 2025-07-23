@@ -43,7 +43,7 @@ class AuthController extends Controller
         'email'=>'required|email|unique:users,email',
         'password'=>'required|confirmed',
         'nom_entreprise'=>'required|string|max:255',
-        'description'=>'nullable|string|max:1000',
+        'biography'=>'nullable|string|max:1000',
 
     ]);
     //Creation de l'utilisateur
@@ -53,7 +53,7 @@ class AuthController extends Controller
             'email' => $request->email,
             'password' =>  Hash::make($request->password),
             'nom_entreprise' => $request->nom_entreprise,
-            'description' => $request->description,
+            'biography' => $request->biographyss,
             'role'=>'entrepreneur_en_attente',
     ]);
 
