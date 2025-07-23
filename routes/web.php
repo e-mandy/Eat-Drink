@@ -11,7 +11,7 @@ Route::group([
     'prefix' => 'auth'
     ], function (){
     Route::get('/inscription', function () {
-    return view('auth.inscription');
+        return view('auth.inscription');
     })->name('inscription');
     
     Route::get('/connexion', function () {
@@ -27,8 +27,10 @@ Route::group([
     })->name('email_verification');
 });
 
-Route::group(['as' => "entrepreneur.", 'prefix' => "entrepreneur"], function(){
-    Route::get('/dashboard', function(){
-        return view('entrepreneur.dashboard');
-    })->name('dashboard');
+Route::get('/dashboard', function(){
+    return view('entrepreneur.dashboard');
+})->name('dashboard');
+
+Route::group(['as' => "entrepreneur.", 'prefix' => "entrepreneur", 'middleware' => ''], function(){
+    
 });
