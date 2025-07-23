@@ -17,4 +17,12 @@ Route::group([
     Route::get('/connexion', function () {
         return view('auth.connexion');
     })->name('connexion');
+
+    Route::get('/mot_de_passe_oublie', function(){
+        return view('auth.mot_de_passe_oublie');
+    })->name('forgot_password');
+
+    ROute::get('/email_verification', function(){
+        return view('auth.email_verification');
+    })->name('email_verification');
 });
