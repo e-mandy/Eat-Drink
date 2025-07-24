@@ -1,47 +1,41 @@
-<?php
+<<?php
 
-namespace App\Http\Controllers;
+namespace app\Models;
 
-use App\Http\Requests\CommandeRequest;
-use App\Models\Commande;
-use App\Models\Produit;
-use App\Models\Stand;
-use Illuminate\Http\JsonResponse;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class CommandeController extends Controller
+class Commande extends Model
 {
+    use HasFactory;
+
     /**
-     * Enregistre une nouvelle commande.
+     * Les attributs qui sont assignables en masse.
+     *
+     * @var array<int, string>
      */
-    public function store(CommandeRequest $request): JsonResponse
+    protected $fillable = [
+        'stand_id',
+        'details_commande',
+        'date_commande',
+    ];
+
+    /**
+     * Les attributs qui doivent être castés.
+     *
+     * @var array<string, string>
+     */
+    protected $casts = [
+        'details_commande' => 'array',
+        'date_commande' => 'datetime',
+    ];
+
+    /**
+     * Obtient le stand associé à la commande.
+     */
+    public function stand(): BelongsTo
     {
-        // Récupère et valide les données
-        $validated = $request->validated();
-
-        // Vérifie que tous les produits appartiennent au stand spécifié
-        $stand = Stand::findOrFail($validated['stand_id']);
-        $produitIds = array_column($validated['details_commande'], 'id');
-        
-        // Vérifie que tous les produits existent et appartiennent au stand
-        $produitsCount = Produit::whereIn('id', $produitIds)
-            ->where('stand_id', $stand->id)
-            ->count();
-
-        if ($produitsCount !== count($produitIds)) {
-            return response()->json([
-                'message' => 'Certains produits n\'appartiennent pas au stand sélectionné'
-            ], 422);
-        }
-
-        // Crée la commande
-        $commande = Commande::create([
-            'stand_id' => $validated['stand_id'],
-            'details_commande' => $validated['details_commande'],
-        ]);
-
-        return response()->json([
-            'message' => 'Commande créée avec succès',
-            'commande' => $commande
-        ], 201);
+        return $this->belongsTo(Stand::class);
     }
 } 
